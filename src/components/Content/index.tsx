@@ -1,8 +1,8 @@
 import { Grid, Text } from "@chakra-ui/react";
-//import { ContinentProps } from "../../pages/continent/[slug]";
-import Infos from "./infos";
+import { ContinentProps } from "../../pages/continent/[slug]";
+import Infos from "./Infos";
 
-export default function Content({continent}) {
+export default function Content({continent}:ContinentProps) {
   return (
     <Grid templateColumns={["1fr","1fr","1fr 1fr", "1.2fr 1fr"]} gap={[5, 10, 16, 20]} my={["8", "20"]}>
       <Text

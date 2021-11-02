@@ -1,11 +1,11 @@
 import { Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react";
-/*
+
 interface CaracteristicaProps {
   icon: string;
   text: string;
 }
-*/
-export default function Caracteristica({icon, text}) {
+
+export default function Caracteristica({icon, text}: CaracteristicaProps) {
   const isMobile = useBreakpointValue({
     base:false,
     sm:true

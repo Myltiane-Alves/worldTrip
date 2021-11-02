@@ -1,14 +1,16 @@
 import { Flex } from "@chakra-ui/react";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import { RichText } from 'prismic-dom';
 import Cities from "../../components/Cities";
 import Content from "../../components/Content";
 import ContinentBanner from "../../components/ContinentBanner";
 import Header from "../../components/Header";
-
+import { getPrismicClient } from "../../services/prismic";
+import Prismic from '@prismicio/client';
 import { useRouter } from "next/dist/client/router";
 import Loading from "../../components/Loading";
-/*
+
 export interface ContinentProps {
   continent: {
     slug: string;
@@ -26,9 +28,9 @@ export interface ContinentProps {
       flag: string;
     }[]
   }
-}*/
+}
 
-export default function Continent({continent}) {
+export default function Continent({continent}: ContinentProps) {
   const router = useRouter();
   if (router.isFallback) {
     return <Loading />
@@ -59,7 +61,7 @@ export default function Continent({continent}) {
     </Flex>
   )
 }
-/*
+
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient();
@@ -111,4 +113,4 @@ export const getStaticProps: GetStaticProps = async (context) => {
     },
     revalidate: 1800,
   }
-}*/
+}

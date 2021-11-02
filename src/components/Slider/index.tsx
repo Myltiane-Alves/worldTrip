@@ -5,7 +5,7 @@ import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 's
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y, Autoplay]);
-/*
+
 interface SliderProps {
   continents:{
     slug: string;
@@ -14,8 +14,10 @@ interface SliderProps {
     image: string;
   }[]
 }
-*/
-export default function Slider({continents}) {
+
+
+
+export default function Slider({continents}: SliderProps) {
   return (
     <Flex w="100%" h={["250px","450px"]} maxW="1240px" mx="auto" mb={["5","10"]}>
       <Swiper

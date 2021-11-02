@@ -1,13 +1,15 @@
 import { Flex, Heading } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
+import Prismic from '@prismicio/client';
 import Head from "next/head";
 import Banner from "../components/Banner";
 import Caracteristicas from "../components/Caracteristicas";
 import Header from "../components/Header";
 import Separador from "../components/Separador";
 import Slider from "../components/Slider";
+import { getPrismicClient } from "../services/prismic";
 
-/*
+
 interface HomeProps {
   continents:{
     slug: string;
@@ -16,8 +18,8 @@ interface HomeProps {
     image: string;
   }[]
 }
-*/
-export default function Home({ continents }) {
+
+export default function Home({ continents }: HomeProps) {
   return (
     <Flex direction="column">
     <Head>
@@ -50,7 +52,7 @@ export default function Home({ continents }) {
   </Flex>
   )
 }
-/*
+
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient();
 
@@ -66,11 +68,10 @@ export const getStaticProps: GetStaticProps = async () => {
       image: continent.data.slider_image.url
     }
   })
-
+  
   return {
     props: {
-      continents
+      continents 
     }
   }
 }
-*/
